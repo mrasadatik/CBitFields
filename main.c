@@ -20,7 +20,7 @@ int main()
     udTCP.tcpFRH.URG = 0b0;
 
     udTCP.tcpFRH.reserved = 0b000000;
-    udTCP.tcpFRH.hlen = 0b1111;
+    udTCP.tcpFRH.hLen = 0b1111;
 
     udTCP.windowSize = 0b0110110001111111;
     udTCP.checksum = 0b0001001100100101;
@@ -41,7 +41,7 @@ int main()
     printf("\tURG: %hd\n", udTCP.tcpFRH.URG);
 
     printf("Reserved: %hd\n", udTCP.tcpFRH.reserved);
-    printf("Header Length: %hd\n", udTCP.tcpFRH.hlen);
+    printf("Header Length: %hd\n", udTCP.tcpFRH.hLen);
 
     printf("Window Size: %hd\n", udTCP.windowSize);
     printf("Checksum: %hd\n", udTCP.checksum);
