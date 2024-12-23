@@ -13,7 +13,7 @@ struct tcpFlagsReservedAndHeader {
     uint16_t URG : 1; // Urgent pointer is valid
 
     uint16_t reserved : 6;
-    uint16_t hlen : 4; // Header Length
+    uint16_t hLen : 4; // Header Length
 };
 
 struct tcpHeader {
