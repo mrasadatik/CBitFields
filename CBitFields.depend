@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1734955561 source:f:\2023-1-60-130\cse207\dhmai\cbitfields\main.c
+	<stdio.h>
+	"./include/tcp.h"
+
+1734955619 f:\2023-1-60-130\cse207\dhmai\cbitfields\include\tcp.h
+	<inttypes.h>
+
