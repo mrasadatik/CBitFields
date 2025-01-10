@@ -3,31 +3,39 @@
 
 #include <inttypes.h>
 
-struct tcpFlagsReservedAndHeader {
-    // Control Flags
-    uint16_t FIN : 1; // Terminate the connection
-    uint16_t SYN : 1; // Synchronize sequence numbers
-    uint16_t RST : 1; // Reset the connection
-    uint16_t PSH : 1; // Request for push
-    uint16_t ACK : 1; // Acknowledgement number is valid( used in case of cumulative acknowledgement)
-    uint16_t URG : 1; // Urgent pointer is valid
+struct tcpPortAddresses {
+    uint32_t sourcePort : 16;
+    uint32_t destinationPort : 16;
+};
+
+struct tcpFlagsReservedAndHeaderLen {
+    uint16_t FIN : 1;
+    uint16_t SYN : 1;
+    uint16_t RST : 1;
+    uint16_t PSH : 1;
+    uint16_t ACK : 1;
+    uint16_t URG : 1;
 
     uint16_t reserved : 6;
-    uint16_t hLen : 4; // Header Length
+    uint16_t hLen : 4;
+};
+
+struct tcpChecksumAndPointer {
+    uint32_t checksum : 16;
+    uint32_t urgentPointer : 16;
 };
 
 struct tcpHeader {
-    uint16_t sourcePort;
-    uint16_t destinationPort;
+    struct tcpPortAddresses tcpPA;
 
     uint32_t sequenceNumber;
     uint32_t acknowledgementNumber;
 
-    struct tcpFlagsReservedAndHeader tcpFRH;
+    struct tcpFlagsReservedAndHeaderLen tcpFRHl;
 
     uint16_t windowSize;
-    uint16_t checksum;
-    uint16_t urgentPointer;
+
+    struct tcpChecksumAndPointer tcpCP;
 };
 
 #endif // TCP_H
