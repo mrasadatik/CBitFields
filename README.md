@@ -20,6 +20,8 @@ The TCP header structure is composed of several 16-bit and 32-bit fields, which 
 ## Conclusion
 This project is a great way to practice using bitfields in C while learning about the structure of a TCP header. By mimicking a real-world protocol, you will get hands-on experience with bit-level data manipulation and bitfield usage.
 
+> GitHub Repo: [https://github.com/mrasadatik/CBitFields.git](https://github.com/mrasadatik/CBitFields.git)
+
 ---
 
 ## Course Information
